@@ -5,3 +5,31 @@ Content-Type: application/json
     "name": "Päkapikk",
     "number": "0466526459"
 }
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "I am conscientious",
+    "number": "04665236459"
+}
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{}
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Päkapikk"
+}
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "number": "0466526459"
+}
