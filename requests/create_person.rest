@@ -10,7 +10,7 @@ POST http://localhost:3001/api/persons
 Content-Type: application/json
 
 {
-    "name": "Cnscientious",
+    "name": "Conscientious",
     "number": "04665236459"
 }
 ###
@@ -19,6 +19,14 @@ Content-Type: application/json
 
 {
     "name": "Liisa Marttinen",
+    "number": "040-243563"
+}
+###
+POST http://fathomless-earth-56826.herokuapp.com/api/persons
+Content-Type: application/json
+
+{
+    "name": "Liisa Marttila",
     "number": "040-243563"
 }
 ###
