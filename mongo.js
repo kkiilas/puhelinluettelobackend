@@ -12,7 +12,9 @@ const personSchema = new mongoose.Schema({
 
 const Person = mongoose.model('Person', personSchema)
 
-if (process.argv.length === 2) {
+console.log('process.argv.length', process.argv.length)
+
+if (process.argv.length === 3) {
   Person
     .find({})
     .then(people => {
