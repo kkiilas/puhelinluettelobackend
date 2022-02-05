@@ -1,7 +1,10 @@
-require('dotenv').config()
+// require('dotenv').config()
 const mongoose = require('mongoose')
 
-const url = process.env.MONGODB_URI
+// const url = process.env.MONGODB_URI
+const password = process.argv[2]
+
+const url = `mongodb+srv://fullstack:${password}@cluster0.gjes7.mongodb.net/person-app?retryWrites=true&w=majority`
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -11,8 +14,6 @@ const personSchema = new mongoose.Schema({
 })
 
 const Person = mongoose.model('Person', personSchema)
-
-console.log('process.argv.length', process.argv.length)
 
 if (process.argv.length === 3) {
   Person
