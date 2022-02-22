@@ -24,7 +24,7 @@ app.get('/', (request, response) => {
 
 app.get('/info', (request, response, next) => {
   Person.find({}).then(people => {
-    const info = `<p>Phonebook has info for ${people.length} people</p>
+    const info = `<p>Phonebook has info for ${people.length} rabbits people</p>
   <p>${new Date()}</p>`
     response.send(info)
   })
