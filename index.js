@@ -27,9 +27,7 @@ app.get('/', (request, response) => {
 app.get('/info', (request, response, next) => {
   Person.find({})
     .then((people) => {
-      const info = `<p>Phonebook has info for ${
-        people.length
-      } people and rabbits</p>
+      const info = `<p>Phonebook has info for ${people.length} people</p>
   <p>${new Date()}</p>`
       response.send(info)
     })
@@ -90,7 +88,8 @@ app.put('/api/persons/:id', (request, response, next) => {
 
 app.delete('/api/persons/:id', (request, response, next) => {
   Person.findByIdAndRemove(request.params.id)
-    .then((result) => {
+    // .then((result) => {
+    .then(() => {
       response.status(204).end()
     })
     .catch((error) => next(error))
