@@ -20,15 +20,29 @@ app.use(
   morgan(':method :url :status :res[content-length] - :response-time ms :body')
 )
 
+const start = `<head>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+  />
+  <title>Puhelinluettelo - Info</title>
+  </head>
+  <body class="container bg-dark text-light">`
+
+const end = '</body>'
+
 app.get('/', (request, response) => {
-  response.send('<h1>Hello World!</h1>')
+  response.send(`${start}<h1>Hello World!</h1>${end}`)
 })
 
 app.get('/info', (request, response, next) => {
   Person.find({})
     .then((people) => {
-      const info = `<p>Phonebook has info for ${people.length} people</p>
-  <p>${new Date()}</p>`
+      const info = `${start}
+        <p>Phonebook has info for ${people.length} people</p>
+        <p>${new Date()}</p>${end}`
       response.send(info)
     })
     .catch((error) => next(error))
