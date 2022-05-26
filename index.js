@@ -30,9 +30,12 @@ const start = `
     />
     <title>Puhelinluettelo - Info</title>
   </head>
-  <body class="container bg-dark text-light">`
+  <body class="bg-secondary bg-gradient text-light">
+    <div class="container bg-warning bg-gradient">
+      <div class="d-flex justify-content-center vh-100 bg-dark bg-gradient">
+        <div class="bg-dark p-5">`
 
-const end = '</body>'
+const end = '</div></div></div></body>'
 
 app.get('/', (request, response) => {
   response.send(`${start}<h1>Hello World!</h1>${end}`)
@@ -42,7 +45,7 @@ app.get('/info', (request, response, next) => {
   Person.find({})
     .then((people) => {
       const info = `${start}
-        <p>Phonebook has info for ${people.length} people</p>
+        <p>The phonebook has info for ${people.length} people.</p>
         <p>${new Date()}</p>${end}`
       response.send(info)
     })
