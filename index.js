@@ -32,7 +32,7 @@ const start = `
   </head>
   <body class="bg-secondary bg-gradient text-light">
     <div class="container bg-warning bg-gradient">
-      <div class="d-flex justify-content-center vh-100 bg-dark bg-gradient">
+      <div class="d-flex justify-content-center vh-100 bg-dark bg-gradient min-vh-100">
         <div class="bg-dark p-5">`
 
 const end = '</div></div></div></body>'
