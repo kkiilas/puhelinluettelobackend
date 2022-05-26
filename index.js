@@ -45,7 +45,7 @@ app.get('/info', (request, response, next) => {
   Person.find({})
     .then((people) => {
       const info = `${start}
-        <p>The phonebook has info for ${people.length} people.</p>
+        <p>The phonebook has info about ${people.length} people.</p>
         <p>${new Date()}</p>${end}`
       response.send(info)
     })
